@@ -1,13 +1,16 @@
 env:
-  "browser": "true",
-  "es2021": "true",
-  "commonjs": "true",
-  "extends": ["airbnb-base" 
-]
+  browser: true
+  es2021: true
+extends: airbnb-base
 overrides: []
 parserOptions:
   ecmaVersion: latest
   sourceType: module
-rules: {
-  "no-console": "off"
-}
+
+rules:
+  no-console: 0
+  import/extensions:
+    - error
+    - ignorePackages
+    - js: always
+    - linebreak-style: ["error", "windows"]
