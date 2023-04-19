@@ -23,6 +23,7 @@
   "dependencies": {
     "commander": "^10.0.0",
     "lodash": "^4.17.21",
+    "readfilesync": "^1.1.5",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
