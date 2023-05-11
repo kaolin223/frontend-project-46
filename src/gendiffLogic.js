@@ -11,6 +11,9 @@ const buildDiffTree = (first, second) => {
     if (!_.has(first, key)) {
       return { key, state: 'added', value: second[key] };
     }
+    if (_.isPlainObject(first[key]) && _.isPlainObject(second[key])) {
+      return { key, state: 'nested', children: buildDiffTree(first[key], second[key]) };
+    }
     if (_.isEqual(first[key], second[key])) {
       return { key, state: 'unchanged', value: first[key] };
     }
