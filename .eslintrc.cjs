@@ -3,6 +3,9 @@ module.exports = {
     browser: true,
     es2021: true,
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   extends: 'airbnb-base',
   overrides: [
   ],
@@ -11,6 +14,6 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-  "no-console": "off"
+    'no-console': 'off',
   },
 };
