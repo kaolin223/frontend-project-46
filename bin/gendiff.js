@@ -2,6 +2,8 @@
 
 import { Command } from 'commander';
 
+import gendiff from '../src/index.js';
+
 const program = new Command();
 
 program
@@ -11,7 +13,7 @@ program
   .arguments('<filepath1>')
   .argument('<filepath2>')
   .action((filepath1, filepath2) => {
-    console.log(diff(filepath1, filepath2));
+    console.log(gendiff(filepath1, filepath2));
   });
 
 program.parse(process.argv);
