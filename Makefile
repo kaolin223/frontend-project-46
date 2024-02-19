@@ -13,5 +13,5 @@ lint:
 publish:
 				npm publish
 
-gendiff -h:
+gendiff:
 				node/bin gendiff.js -h
