@@ -9,7 +9,7 @@ const filepath2 = path.resolve('../__fixtures__/file2.json');
 const obj2 = JSON.parse(fs.readFileSync(filepath2));
 console.log(obj2);
 
-const getPath = (str) => str.startWith('/') ? path.resolve(str) : process.cwd(str);
+const getPath = (str) => str.startsWith('/') ? path.resolve(str) : process.cwd(str);
 
 const getData = (obj) => JSON.parse(fs.readFileSync(obj));
 
