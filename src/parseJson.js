@@ -1,23 +1,18 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import _ from 'lodash';
+import process from 'node:process';
 
-const filepath1 = path.resolve('__fixtures__/file1.json');
+const filepath1 = path.resolve('../__fixtures__/file1.json');
 const obj1 = JSON.parse(fs.readFileSync(filepath1));
-const filepath2 = path.resolve('__fixtures__/file2.json');
+console.log(obj1);
+const filepath2 = path.resolve('../__fixtures__/file2.json');
 const obj2 = JSON.parse(fs.readFileSync(filepath2));
-  
-const genDiffObj = (obj1, obj2) => {
-  const dataObj1 = Object.entries(obj1);
-  const dataObj2 = Object.entries(obj2);
-  const str = _.union([...dataObj1, ...dataObj2].flat());
-  const cloneObj = _.cloneDeep(str);
-  const result = cloneObj.sort((a, b) => {
-    return a - b;
-  });
-  return result.join(' ');
-};
-  
-console.log(genDiffObj(obj1, obj2));
+console.log(obj2);
 
+const getPath = (str) => str.startWith('/') ? path.resolve(str) : process.cwd(str);
 
+const getData = (obj) => JSON.parse(fs.readFileSync(obj));
+
+const genDiffLogick = () => 123; 
+
+export { getData, getPath };
