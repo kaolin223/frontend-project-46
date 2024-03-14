@@ -15,7 +15,12 @@ const obj2 = JSON.parse(json2)
 const genDiffObj = (obj1, obj2) => {
   const dataObj1 = Object.entries(obj1);
   const dataObj2 = Object.entries(obj2);
-  return _.union([...dataObj1, ...dataObj2].flat())
+  const str = _.union([...dataObj1, ...dataObj2].flat());
+  const cloneObj = _.cloneDeep(str);
+  const result = cloneObj.sort((a, b) => {
+    return a - b;
+  });
+  return result.join(' ');
 };
   
 console.log(genDiffObj(obj1, obj2));
