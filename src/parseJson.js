@@ -1,7 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
-import _ from 'lodash';
 
 const getPath = (str) => str.startsWith('/') ? path.resolve(str) : process.cwd(str);
 
