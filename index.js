@@ -40,7 +40,7 @@ const genDiffLogick = (obj1, obj2) => {
       result.push(` - ${item.key}: ${item.oldValue}\n`);
     }
     if (item.action === 'unchanged') {
-      result.push(`  ${item.key}: ${item.oldValue}\n`); 
+      result.push(`   ${item.key}: ${item.oldValue}\n`); 
     }
     if (item.action === 'changed') {
       result.push(` - ${item.key}: ${item.oldValue}\n`);
